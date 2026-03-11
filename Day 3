@@ -1,0 +1,53 @@
+class Solution {
+    public int appendCharacters(String s, String t) {
+        
+        int i = 0; 
+        int j = 0; 
+
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                j++;
+            }
+            i++;
+        }
+
+        return t.length() - j;
+    }
+}
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int length = 0;
+        int i = s.length() - 1;
+
+        while (i >= 0 && s.charAt(i) == ' ') {
+            i--;
+        }
+
+        while (i >= 0 && s.charAt(i) != ' ') {
+            length++;
+            i--;
+        }
+
+        return length;
+    }
+}
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int maxCount = 0;
+        int count = 0;
+
+        for (int num : nums) {
+            if (num == 1) {
+                count++;
+                maxCount = Math.max(maxCount, count);
+            } else {
+                count = 0;
+            }
+        }
+
+        return maxCount;
+    }
+}
+    
